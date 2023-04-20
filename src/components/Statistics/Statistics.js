@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { List, Title } from './Statistics.styles';
 
 export const Statistics = ({
   statisticItems,
@@ -9,15 +10,15 @@ export const Statistics = ({
 }) => {
   return (
     <div>
-      <h3>Statistics</h3>
+      <Title>Statistics</Title>
       {isFeedback ? (
-        <ul>
+        <List>
           {statisticItems}
           <li key="total">Total: {total}</li>
           {isPositiveOption && (
             <li key="positive">Positive feedback: {positivePercentage}</li>
           )}
-        </ul>
+        </List>
       ) : (
         <p>There is no feedback</p>
       )}

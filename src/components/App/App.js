@@ -25,6 +25,8 @@ export class App extends Component {
         [key]: prevKey + 1,
       };
     });
+
+    e.currentTarget.blur();
   };
 
   countTotalFeedback = () =>
@@ -47,20 +49,23 @@ export class App extends Component {
     });
 
   isPositiveOption = () => {
-    const { options } = this.props;
-    const { positiveOption } = this.props;
+    const { options, positiveOption } = this.props;
     return options.includes(positiveOption);
   };
 
   isFeedback = () => this.countTotalFeedback() > 0;
 
   render() {
-    const { options } = this.props;
+    const { options, positiveOption } = this.props;
     const statisticItems = this.makeStatisticItems();
 
     return (
       <Section title="Please leave feedback">
-        <FeedbackOptions options={options} onClick={this.onSetFeedback} />
+        <FeedbackOptions
+          options={options}
+          positiveOption={positiveOption}
+          onClick={this.onSetFeedback}
+        />
         <Statistics
           statisticItems={statisticItems}
           total={this.countTotalFeedback()}
