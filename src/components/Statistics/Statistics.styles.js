@@ -6,6 +6,9 @@ export const Title = styled.h3`
 `;
 
 export const List = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   list-style: none;
   padding: 0;
 `;
