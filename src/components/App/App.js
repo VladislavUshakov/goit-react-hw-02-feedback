@@ -1,13 +1,20 @@
+import { Statistics } from 'components/Statistics';
+import { Section } from 'components/Section';
+import { FeedbackOptions } from 'components/FeedbackOptions';
+
 import { Component } from 'react';
 import { firstLetterUp } from '../../utils';
-import { Statistics } from 'components/Statistics';
-import { FeedbackOptions } from 'components/FeedbackOptions';
-import { Section } from 'components/Section';
+import PropTypes from 'prop-types';
 
 export class App extends Component {
   static defaultProps = {
     options: ['good', 'neutral', 'bad'],
     positiveOption: 'good',
+  };
+
+  static propTypes = {
+    options: PropTypes.array.isRequired,
+    positiveOption: PropTypes.string.isRequired,
   };
 
   state = this.props.options.reduce((acum, option) => {
