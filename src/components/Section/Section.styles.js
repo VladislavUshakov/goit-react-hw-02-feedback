@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const Container = styled.section`
+export const Container = styled.div`
   max-width: 480px;
   padding: 35px 20px;
   margin: 25px auto 0;
